@@ -4,6 +4,6 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class StateService {
-  API_URL = 'https://dev.tungtongsaving.com/api/';
+  API_URL = 'https://192.168.1.100/MoldLayout/api/MoldDatas/Get';
   constructor() { }
 }

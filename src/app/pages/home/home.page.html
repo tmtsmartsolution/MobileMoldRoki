@@ -19,24 +19,29 @@
       refreshingText="Refreshing...">
     </ion-refresher-content>
   </ion-refresher>
-  <ion-list>
+  <ion-list *ngFor="let _dataMold of dataMold">
     <!-- <ion-list-header>
       Plan Order
     </ion-list-header> -->
 
     <ion-item>
       <ion-avatar slot="start">
-        <img src="assets/mold/s_mold.svg">
+        <img [src]="_dataMold.ColorMold">
       </ion-avatar>
       <ion-label>
-        <h3><b>CODE</b> : FG00001</h3>
-        <h3><b>STATUS</b> : <span style="color:#FA016D">Process</span></h3>
-        <h3><b>BARCODE</b> : xxxxxxx</h3>
-        <ion-button color="primary">Search</ion-button>
+        <h3><b>CODE</b> : {{_dataMold.Code}}</h3>
+        <h3 *ngIf="_dataMold.StatusId == 3" ><b>STATUS</b> : <span   style="color:#49C628">{{_dataMold.Status}}</span>
+        </h3>
+        <h3 *ngIf="_dataMold.StatusId != 3" ><b>STATUS</b> : <span   style="color:#FA016D">{{_dataMold.Status}}</span>
+        </h3>
+        <h3><b>BARCODE</b> : {{_dataMold.Barcode}}</h3>
+        <ion-button *ngIf="_dataMold.IsSearch == 0" color="primary">Search</ion-button>
+        <ion-button *ngIf="_dataMold.IsSearch == 1" color="danger">Cancel</ion-button>
+        
       </ion-label>
     </ion-item>
 
-    <ion-item>
+    <!-- <ion-item>
       <ion-avatar slot="start">
         <img src="assets/mold/r_mold.svg">
       </ion-avatar>
@@ -106,6 +111,6 @@
         <h3><b>BARCODE</b> : xxxxxxx</h3>
         <ion-button color="primary">Search</ion-button>
       </ion-label>
-    </ion-item>
+    </ion-item> -->
   </ion-list> 
 </ion-content>

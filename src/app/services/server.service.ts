@@ -18,4 +18,10 @@ export class ServerService {
     return this.http.get(this.state.API_URL + 'get')
     .pipe(map(results => results));
   }
+
+  getMold() {
+    return this.http.get(this.state.API_URL);
+    // return this.http.get(this.state.API_URL)
+    // .pipe(map(results => results));
+  }
 }
