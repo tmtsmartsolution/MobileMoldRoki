@@ -1,0 +1,7 @@
+{
+  "name": "MobileMoldRoki",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "angular"
+}
