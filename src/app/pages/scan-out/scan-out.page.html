@@ -8,5 +8,36 @@
 </ion-header>
 
 <ion-content>
+  <ion-radio-group (ionChange)="radioGroupChange($event)" [(ngModel)]="categories">
+    <ion-list-header>
+      <ion-label>
+        <h2><b>Barcode</b> : {{barcode}}</h2>
+      </ion-label>
+    </ion-list-header>
 
+    <ion-item>
+      <ion-label>Process</ion-label>
+      <ion-radio value="1"></ion-radio>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>Repair</ion-label>
+      <ion-radio value="2"></ion-radio>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>INJECTION</ion-label>
+      <ion-radio value="4"></ion-radio>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>PM</ion-label>
+      <ion-radio value="5"></ion-radio>
+    </ion-item>
+  </ion-radio-group>
+  <ion-button color="primary" expand="full" [disabled]="disabledBtn" (click)='btnOk()' [disabled]='btnOkDisable'>ตกลง</ion-button>
+  <ion-button color="warning" expand="full" (click)='btnScanOut()'>Scan Out Again</ion-button>
 </ion-content>
+<app-footer>
+
+</app-footer>

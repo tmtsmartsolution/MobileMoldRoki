@@ -7,13 +7,14 @@ import { IonicModule } from '@ionic/angular';
 import { ScanInPageRoutingModule } from './scan-in-routing.module';
 
 import { ScanInPage } from './scan-in.page';
-
+import { ComponentModule } from 'src/app/component/components.module';
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    ScanInPageRoutingModule
+    ScanInPageRoutingModule,
+    ComponentModule
   ],
   declarations: [ScanInPage]
 })
