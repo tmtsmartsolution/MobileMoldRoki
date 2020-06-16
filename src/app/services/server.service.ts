@@ -19,6 +19,8 @@ export class ServerService {
     .pipe(map(results => results));
   }
 
+  //header = new HttpHeaders().set('Access-Control-Allow-Origin', '*');
+
   getMold() {
     return this.http.get(this.state.API_URL + 'MoldDatas/Get');
     // return this.http.get(this.state.API_URL)
